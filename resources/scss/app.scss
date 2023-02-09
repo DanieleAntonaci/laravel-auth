@@ -1,18 +1,32 @@
 @import "~bootstrap/scss/bootstrap";
 
+// TOUTE index
 .container-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+
     .element-list {
         width: calc(20% - 20px);
         list-style-type: none;
-        padding-bottom: 30px;
+        background-color: burlywood;
+        margin: 0 10px 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         img {
             width: 100%;
+            margin-bottom: 10px;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }
+
+// ROUTE show
 .list-show {
     display: flex;
     flex-direction: column;
