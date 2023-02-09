@@ -27,20 +27,6 @@ Route::get('/dashboard',[MainController::class, 'dashboard'] )
     Route::get('/project/show/guest/{project}', [MainController::class, 'projectGuestShow'])
     ->name('project.guest.show');
 
-// Route::get('/person/destroy/{person}', [MainController::class, 'personDestroy'])
-//     ->name('person.destroy');
-
-// Route::get('/person/create', [MainController::class, 'personCreate'])
-//     ->name('person.create');
-
-// Route::post('/person/store', [MainController::class, 'personStore'])
-//     ->name('person.store');
-
-// Route::get('/person/edit/{person}', [MainController::class, 'personEdit'])
-//     ->name('person.edit');
-
-// Route::post('/person/update/{person}', [MainController::class, 'personUpdate'])
-//     ->name('person.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -49,6 +35,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
     ->name('project.show');
+
+    Route::get('/project/destroy/{project}', [MainController::class, 'projectDestroy'])
+        ->name('project.destroy');
+    
+    // Route::get('/project/create', [MainController::class, 'projectCreate'])
+    //     ->name('project.create');
+    
+    // Route::post('/project/store', [MainController::class, 'projectStore'])
+    //     ->name('project.store');
+    
+    // Route::get('/project/edit/{project}', [MainController::class, 'projectEdit'])
+    //     ->name('project.edit');
+    
+    // Route::post('/project/update/{project}', [MainController::class, 'projectUpdate'])
+    //     ->name('project.update');
 });
 
 require __DIR__.'/auth.php';

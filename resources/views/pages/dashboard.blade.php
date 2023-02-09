@@ -13,6 +13,7 @@
                </h2>
             </a>
            </div>
+           <a href="{{route('project.destroy', $project)}}">X</a>
        </li>
    @endforeach
 </ul>

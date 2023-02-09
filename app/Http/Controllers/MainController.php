@@ -23,4 +23,8 @@ class MainController extends Controller
     public function projectGuestShow(Project $project){
         return view('pages.projectGuestShow', compact('project'));
     }
+    public function projectDestroy(Project $project){
+        $project->delete();
+        return redirect()-> route('dashboard');
+    }
 }
