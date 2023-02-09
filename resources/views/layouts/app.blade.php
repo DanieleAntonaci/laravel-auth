@@ -75,6 +75,7 @@
             @yield('list-project')
             @yield('projectShow')
             @yield('projectGuestShow')
+            @yield('projectCreate')
 
             
         </main>

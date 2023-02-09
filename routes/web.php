@@ -39,11 +39,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/project/destroy/{project}', [MainController::class, 'projectDestroy'])
         ->name('project.destroy');
     
-    // Route::get('/project/create', [MainController::class, 'projectCreate'])
-    //     ->name('project.create');
+    Route::get('/project/create', [MainController::class, 'projectCreate'])
+        ->name('project.create');
     
-    // Route::post('/project/store', [MainController::class, 'projectStore'])
-    //     ->name('project.store');
+    Route::post('/project/store', [MainController::class, 'projectStore'])
+        ->name('project.store');
     
     // Route::get('/project/edit/{project}', [MainController::class, 'projectEdit'])
     //     ->name('project.edit');
