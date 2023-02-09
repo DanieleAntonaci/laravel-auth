@@ -13,7 +13,10 @@
                </h2>
             </a>
            </div>
-           <a href="{{route('project.destroy', $project)}}">X</a>
+           <div>
+              <a href="{{route('project.destroy', $project)}}">X</a>
+               <a href="{{route('project.edit', $project)}}">Edit</a>
+           </div>
        </li>
    @endforeach
 </ul>

@@ -53,4 +53,28 @@ class MainController extends Controller
 
         return redirect()->route('dashboard');
     }
+
+    public function projectEdit(Project $project ){
+        return view('pages.editProject', compact('project'));
+    }
+
+    public function projectUpdate(Request $request, Project $project){
+        $data= $request->validate([
+            'name' => 'required|string|unique:projects,name|max:64',
+            'description' => 'string',
+            'main_image' => 'required|unique:projects,main_image',
+            'release_date' => 'required|date|before:today',
+            'repo_link' => 'required|unique:projects,repo_link',
+        ]);
+
+        $project -> name = $data['name'];
+        $project -> description = $data['description'];
+        $project -> main_image = $data['main_image'];
+        $project -> release_date = $data['release_date'];
+        $project -> repo_link = $data['repo_link'];
+
+        $project->save();
+
+        return redirect()->route('dashboard');
+    }
 }
