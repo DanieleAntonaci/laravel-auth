@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
-
+a {
+    text-decoration: none;
+}
 // TOUTE index
 .container-list {
     display: flex;
@@ -15,13 +17,31 @@
         flex-direction: column;
         justify-content: space-between;
 
+        h2,
+        a {
+            color: white;
+        }
+        .delete,
+        .edit {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0 20px;
+        }
+        .delete {
+            background-color: red;
+        }
+        .edit {
+            background-color: green;
+        }
         img {
             width: 100%;
             margin-bottom: 10px;
         }
         div {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
         }
     }
 }
@@ -36,5 +56,17 @@
     max-width: 80%;
     img {
         max-width: 400px;
+    }
+}
+
+.btn-add {
+    text-align: center;
+    margin: 40px 0;
+    a {
+        border-radius: 6px;
+        text-decoration: none;
+        color: white;
+        padding: 10px 14px;
+        background-color: darkblue;
     }
 }
