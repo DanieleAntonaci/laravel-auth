@@ -6,10 +6,12 @@
         @foreach ($projects as $project)
             <li class="element-list">
                 <div>
-                        
-                        <img src="{{$project -> main_image}}" alt="img">
-                        {{$project -> name}}            
+                        <a href="{{route('project.guest.show', $project)}}">
 
+                            <img src="{{$project -> main_image}}" alt="img">
+                            {{$project -> name}}            
+                            
+                        </a>
                         
                     </div>
             </li>

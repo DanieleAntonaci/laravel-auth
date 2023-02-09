@@ -22,8 +22,10 @@ Route::get('/dashboard',[MainController::class, 'dashboard'] )
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-    Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
-    ->name('project.show');
+
+
+    Route::get('/project/show/guest/{project}', [MainController::class, 'projectGuestShow'])
+    ->name('project.guest.show');
 
 // Route::get('/person/destroy/{person}', [MainController::class, 'personDestroy'])
 //     ->name('person.destroy');
@@ -44,6 +46,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
+    ->name('project.show');
 });
 
 require __DIR__.'/auth.php';

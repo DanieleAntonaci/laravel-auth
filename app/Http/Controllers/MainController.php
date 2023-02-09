@@ -20,4 +20,7 @@ class MainController extends Controller
     public function projectShow(Project $project){
         return view('pages.projectShow', compact('project'));
     }
+    public function projectGuestShow(Project $project){
+        return view('pages.projectGuestShow', compact('project'));
+    }
 }

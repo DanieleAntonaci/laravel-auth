@@ -5,5 +5,6 @@
 </head>
 <body>
     @yield('list-controller')
+    @yield('projectGuestShow')
 </body>
 </html>

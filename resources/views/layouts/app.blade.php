@@ -74,6 +74,8 @@
             @yield('content')
             @yield('list-project')
             @yield('projectShow')
+            @yield('projectGuestShow')
+
             
         </main>
     </div>

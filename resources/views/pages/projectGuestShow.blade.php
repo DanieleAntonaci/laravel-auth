@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('projectShow')
+@section('projectGuestShow')
     <div class="list-show">
 
         <h1>
