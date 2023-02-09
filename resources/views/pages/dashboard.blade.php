@@ -1,8 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-   <h1>Ok hai effetuato l'accesso</h1>
-   {{-- <a href="{{route('')}}"></a> --}}
-</div>
+
+<ul class="container-list">
+   @foreach ($projects as $project)
+       <li class="element-list">
+           <div>
+            <a href="{{route('project.show', $project)}}">
+               <img src="{{$project -> main_image}}" alt="img">
+               <h2>
+                  {{$project -> name}}            
+               </h2>
+            </a>
+           </div>
+       </li>
+   @endforeach
+</ul>
 @endsection

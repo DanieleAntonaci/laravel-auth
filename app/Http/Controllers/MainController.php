@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $projects= Project::all();
+        return view('pages.index', compact('projects'));
     }
 
     public function dashboard(){
-        return view('pages.dashboard');
+        $projects= Project::all();
+        return view('pages.dashboard', compact('projects'));
+    }
+
+    public function projectShow(Project $project){
+        return view('pages.projectShow', compact('project'));
     }
 }

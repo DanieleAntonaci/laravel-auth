@@ -15,9 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])
+    ->name('index');
 
-Route::get('/dashboard',[MainController::class, 'dashboard'] )->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[MainController::class, 'dashboard'] )
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+    Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
+    ->name('project.show');
+
+// Route::get('/person/destroy/{person}', [MainController::class, 'personDestroy'])
+//     ->name('person.destroy');
+
+// Route::get('/person/create', [MainController::class, 'personCreate'])
+//     ->name('person.create');
+
+// Route::post('/person/store', [MainController::class, 'personStore'])
+//     ->name('person.store');
+
+// Route::get('/person/edit/{person}', [MainController::class, 'personEdit'])
+//     ->name('person.edit');
+
+// Route::post('/person/update/{person}', [MainController::class, 'personUpdate'])
+//     ->name('person.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
