@@ -18,7 +18,6 @@ class ProjectFactory extends Factory
     {
         return [
             'name'=> fake()-> words(3, true),
-            // 'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'description'=>  fake() -> paragraph(),
             'repo_link'=> fake()->url(),
             'release_date'=> fake()-> dateTimeBetween()
