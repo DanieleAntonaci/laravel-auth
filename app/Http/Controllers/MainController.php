@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -36,10 +38,13 @@ class MainController extends Controller
         $data= $request->validate([
             'name' => 'required|string|unique:projects,name|max:64',
             'description' => 'string',
-            'main_image' => 'required|unique:projects,main_image',
+            'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'release_date' => 'required|date|before:tomorrow',
             'repo_link' => 'required|unique:projects,repo_link',
         ]);
+
+        $img_path = Storage::put('uploads', $data['main_image']);
+        $data['main_image'] = $img_path;
 
         $project = new Project();
 
@@ -48,6 +53,7 @@ class MainController extends Controller
         $project -> main_image = $data['main_image'];
         $project -> release_date = $data['release_date'];
         $project -> repo_link = $data['repo_link'];
+
 
         $project->save();
 
@@ -60,12 +66,15 @@ class MainController extends Controller
 
     public function projectUpdate(Request $request, Project $project){
         $data= $request->validate([
-            'name' => 'required|string|max:64',
+            'name' => 'required|string|max:64' ,
             'description' => 'string',
-            'main_image' => 'required',
+            'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'release_date' => 'required|date|before:tomorrow',
             'repo_link' => 'required',
         ]);
+
+        $img_path = Storage::put('uploads', $data['main_image']);
+        $data['main_image'] = $img_path;
 
         $project -> name = $data['name'];
         $project -> description = $data['description'];

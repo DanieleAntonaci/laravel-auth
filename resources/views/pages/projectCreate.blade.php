@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('projectCreate')
-    <form action="{{route('project.store')}}" method="POST">
+    <form action="{{route('project.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label for="name">Name</label>
@@ -15,7 +15,7 @@
         <br>
         
         <label for="main_image">Url img</label>
-        <input type="text" name="main_image">
+        <input type="file" name="main_image">
         
         <br>
         

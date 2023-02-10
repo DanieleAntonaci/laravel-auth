@@ -10,7 +10,7 @@
 
            <div>
             <a href="{{route('project.show', $project)}}">
-               <img src="{{$project -> main_image}}" alt="img">
+               <img src="{{ asset('storage/'. $project ->main_image)}}" alt="img">
                <h2>
                   {{$project -> name}}            
                </h2>

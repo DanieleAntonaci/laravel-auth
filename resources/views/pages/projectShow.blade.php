@@ -9,7 +9,7 @@
         <h2>
             {{$project -> description }}
         </h2>
-        <img src="{{$project -> main_image }}" alt="">
+        <img src="{{ asset('storage/'. $project ->main_image)}}" alt="">
         <div>
             {{$project -> release_date }}   
         </div>   
