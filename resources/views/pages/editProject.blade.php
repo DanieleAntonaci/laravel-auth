@@ -1,33 +1,43 @@
 @extends('layouts.app')
 
 @section('projectEdit')
-    <form action="{{route('project.update', $project)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('project.update', $project)}}" method="POST" enctype="multipart/form-data" class="my_form">
         @csrf
+        <div>
 
-        <label for="name">Name</label>
-        <input type="text" name="name" value="{{$project->name}}">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{$project->name}}">
+        </div>
         
-        <br>
         
-        <label for="description">Description</label>
-        <input type="text" name="description" value="{{$project->description}}">
+        <div>
+
+            <label for="description">Description</label>
+            <textarea name="description" value="{{$project->description}}"></textarea>
+        </div>
         
-        <br>
         
-        <label for="main_image">Url img</label>
-        <input type="file" name="main_image" value="{{$project->main_image}}">
+        <div>
+
+            <label for="main_image">Url img</label>
+            <input type="file" name="main_image" value="{{$project->main_image}}">
+        </div>
         
-        <br>
         
-        <label for="release_date">release_date</label>
-        <input type="date" name="release_date" value="{{$project->release_date}}">
+        <div>
+
+            <label for="release_date">release_date</label>
+            <input type="date" name="release_date" value="{{$project->release_date}}">
+        </div>
         
-        <br>
         
-        <label for="repo_link">Repo link</label>
-        <input type="text" name="repo_link" value="{{$project->repo_link}}">
+        <div>
+
+            <label for="repo_link">Repo link</label>
+            <input type="text" name="repo_link" value="{{$project->repo_link}}">
+        </div>
         
-        <br>
+        
         
         <input type="submit" value="Update project">
     </form>   

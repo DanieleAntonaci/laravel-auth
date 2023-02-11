@@ -80,3 +80,17 @@ a {
         background-color: darkblue;
     }
 }
+.my_form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    div {
+        margin: 20px 0;
+        display: flex;
+
+        label {
+            padding-right: 30px;
+        }
+    }
+}

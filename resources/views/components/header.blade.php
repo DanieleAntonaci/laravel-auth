@@ -11,7 +11,8 @@
                 @guest
                 @else
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{url('/dashbord') }}">Dashboard</a>
+                
+                    <a class="nav-link text-light" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
                 </li>
                 @endguest
                 
