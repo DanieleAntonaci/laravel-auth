@@ -4,6 +4,8 @@
     @include('components.head')
 </head>
 <body>
+    @include('components.head')
+    
     @yield('list-controller')
     @yield('projectGuestShow')
 </body>
